@@ -1,3 +1,8 @@
+const URL = 'https://www.omdbapi.com/'
+
+
+
+
 // make obj to use cod in both search
 const autocompleteConfig = {
   
@@ -14,7 +19,7 @@ const autocompleteConfig = {
     return movie.Title;
   },
   async fetchData(searchTerm) {
-    const response = await axios.get('http://www.omdbapi.com/', {
+    const response = await axios.get(URL, {
       params: {
         apikey: '4f03ed78',
         s: searchTerm
@@ -59,7 +64,7 @@ let leftMovie;
 let rightMovie;
 
 const onMovieSelect = async (movie, summaryElement,side) => {
-    const response = await axios.get('http://www.omdbapi.com/', {
+    const response = await axios.get(URL, {
         params: {
             apikey: '4f03ed78',
             i: movie.imdbID
